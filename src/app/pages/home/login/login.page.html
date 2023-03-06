@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="recetas" slot="icon-only"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Iniciar sesión</ion-button>
+        <ion-label>¿Aún no tienes una cuenta? </ion-label>
+        <a [routerLink]="['/home/registro']" class="small-text">Regístrate</a>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
